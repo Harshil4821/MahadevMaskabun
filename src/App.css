@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;600&display=swap');
+
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+main {
+	width: 100%;
+	min-height: 100vh;
+	background-color: #f5f6fa;
+}
+
+main .loading_outer {
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+}
+
+main .loading_outer h1 {
+	color: #2f3640;
+	font-size: 28px;
+	font-weight: 600;
+}
+
+main .loading_outer .shuffling_food_items {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+main .loading_outer .shuffling_food_items img {
+	animation: dot ease-in-out 1.5s infinite;
+	background-color: transparent;
+	display: inline-block;
+	height: 20px;
+	margin: 10px;
+	width: 20px;
+	animation-delay: 1s;
+	opacity: 0;
+}
+
+main .loading_outer .shuffling_food_items img:nth-of-type(2) {
+	animation-delay: 1s;
+}
+
+main .loading_outer .shuffling_food_items img:nth-of-type(3) {
+	animation-delay: 1.2s;
+}
+
+@keyframes dot {
+	0% {
+		background-color: transparent;
+		transform: scale(1);
+		opacity: 1;
+	}
+
+	50% {
+		background-color: transparent;
+		transform: scale(1.5);
+		opacity: 1;
+	}
+
+	100% {
+		background-color: transparent;
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes shuffle {
+	0% {
+		transform: translateX(0) translateY(0);
+	}
+
+	100% {
+		transform: translateX(calc(rand(0, 100) - 50)) translateY(calc(rand(0, 100) - 50));
+	}
+}
+
+
+main .header_outer {
+	padding: 20px auto 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+main .header_outer h1 {
+	margin: 25px auto;
+	color: #2f3640;
+	font-size: 25px;
+	font-weight: 600;
+}
+
+main .search_outer {
+	max-width: 350px;
+	width: auto;
+	margin: 10px auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+main .search_outer input {
+	width: 100%;
+	margin: 0 20px;
+	height: 30px;
+	border: none;
+	outline: none;
+	background: #fff;
+	color: #2f3640;
+	padding: 5px;
+	caret-color: #2f3640;
+}
+
+main .list_outer {
+	width: 100%;
+	height: auto;
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+main .list_outer .card_detail {
+	width: 300px;
+	min-height: 60px;
+	background-color: #a4b0be;
+	padding: 5px;
+	margin: 10px;
+}
+
+main .list_outer .card_detail .menu_item_name {
+	font-size: 18px;
+}
